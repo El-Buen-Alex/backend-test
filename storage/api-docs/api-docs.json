@@ -1,0 +1,327 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Task Controller",
+        "description": "Here you can found the main methods that TaskController has.",
+        "contact": {
+            "email": "alexispincay005@gmail.com"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/v1/taks": {
+            "get": {
+                "tags": [
+                    "taks"
+                ],
+                "summary": "Get a list of taks that belongs the user logged in",
+                "operationId": "28063ba91bda321894eb10ef59856b4d",
+                "parameters": [
+                    {
+                        "name": "s",
+                        "in": "query",
+                        "description": "parameter that allows filter by name task",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "string": {
+                                "summary": "Hi this homework is important",
+                                "value": "Important"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Show all Tasks"
+                    },
+                    "400": {
+                        "description": "Show an object that containts reason, message and type error"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "taks"
+                ],
+                "summary": "Update an existent task",
+                "operationId": "206f7a34c8cdca80e414a8ab5e7c3fcb",
+                "parameters": [
+                    {
+                        "name": "task_id",
+                        "in": "path",
+                        "description": "the task identifier to update data",
+                        "required": true,
+                        "schema": {
+                            "type": "int"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "set the task name",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "description": "set the task description",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "description": "set user that belongs the task",
+                        "required": true,
+                        "schema": {
+                            "type": "int"
+                        }
+                    },
+                    {
+                        "name": "status_id",
+                        "in": "query",
+                        "description": "set status task",
+                        "required": true,
+                        "schema": {
+                            "type": "int"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Task updated succefully"
+                    },
+                    "400": {
+                        "description": "Show an object that containts reason, message and type error"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "taks"
+                ],
+                "summary": "Create a new task",
+                "operationId": "3a1ebf2a96e8a2801770bb00df9915e9",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "set the task name",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "description": "set the task description",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "user_id",
+                        "in": "query",
+                        "description": "set user that belongs the task",
+                        "required": true,
+                        "schema": {
+                            "type": "int"
+                        }
+                    },
+                    {
+                        "name": "status_id",
+                        "in": "query",
+                        "description": "set status task",
+                        "required": true,
+                        "schema": {
+                            "type": "int"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Task created succefully"
+                    },
+                    "400": {
+                        "description": "Show an object that containts reason, message and type error"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "taks"
+                ],
+                "summary": "Delete an existent task",
+                "operationId": "572578a0bdcaf2fb9c7db759c1d48fa4",
+                "parameters": [
+                    {
+                        "name": "task_id",
+                        "in": "path",
+                        "description": "the task identifier to delete",
+                        "required": true,
+                        "schema": {
+                            "type": "int"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Task deleted succefully"
+                    },
+                    "400": {
+                        "description": "Show an object that containts reason, message and type error"
+                    }
+                }
+            }
+        },
+        "/api/v1/users": {
+            "get": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "Get an users list that belongs the user logged in",
+                "operationId": "3ab81e3f9b24b4f36ab08d72349ac632",
+                "parameters": [
+                    {
+                        "name": "s",
+                        "in": "query",
+                        "description": "parameter that allows filter by name task",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "string": {
+                                "summary": "Alfred toni",
+                                "value": "alfred"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Show all users"
+                    },
+                    "400": {
+                        "description": "Show an object that containts reason, message and type error"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "Update an existing user",
+                "operationId": "f007351cc25a998a25960587be1b3038",
+                "parameters": [
+                    {
+                        "name": "user_id",
+                        "in": "path",
+                        "description": "the user identifier to update data",
+                        "required": true,
+                        "schema": {
+                            "type": "int"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "set the user name",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "set the user email",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User created succefully"
+                    },
+                    "400": {
+                        "description": "Show an object that containts reason, message and type error"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "Create a new user",
+                "operationId": "ba548b97148bb5c0d8cab3bc3f128bfd",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "set the user name",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "set the user email",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User created succefully"
+                    },
+                    "400": {
+                        "description": "Show an object that containts reason, message and type error"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "Delete an existent user",
+                "operationId": "89b20c37d8184d7a1b4910e7528492d4",
+                "parameters": [
+                    {
+                        "name": "task_id",
+                        "in": "path",
+                        "description": "the user identifier to delete",
+                        "required": true,
+                        "schema": {
+                            "type": "int"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User deleted succefully"
+                    },
+                    "400": {
+                        "description": "Show an object that containts reason, message and type error"
+                    }
+                }
+            }
+        }
+    }
+}
